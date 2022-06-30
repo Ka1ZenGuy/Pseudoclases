@@ -1,0 +1,71 @@
+:root{
+    --ancho-caja-roja: 10%;
+    --alto-caja-roja: 100%;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+}
+.box::before {
+    content: "hola";
+}
+.box::after{
+    background-color: blanchedalmond;
+    width: 80%;
+    display: block;
+    margin: 0 auto 0 auto ;
+    text-align: center;
+    position: relative;
+    top: -10px;
+    border-radius: .5em;
+}
+.box::after
+{
+content: "adios";
+}
+li{
+    content: "😂";
+    margin-right: 10px;
+    list-style-type: none;
+}
+.contenedor-imagen{
+    width: 200px;
+    height: auto;
+    position: relative;
+}
+.contenedor-imagen img{
+    width: 100%;
+    height: auto;
+    
+}
+.contenedor-imagen::after,
+.contenedor-imagen::before{
+    content: "";
+    background-color: rgba(0, 0, 0, 0.205); 
+    width: var(--ancho-caja-roja);
+    height: var(--alto-caja-roja); 
+    position: absolute;
+    left: calc(50% - (var(--ancho-caja-roja) / 2 ));
+    top: calc(50% - (var(--alto-caja-roja) / 2))
+}
+.contenedor-imagen::before
+{
+    transform: rotate(45deg);
+} 
+.contenedor-imagen::after
+{
+    transform: rotate(-45deg);
+}
+.test::first-line{
+    color: darkblue;
+    background-color: aqua;
+}
+.box-clases:hover{
+    background-color: bisque;
+    width: 250px;
+}
+::selection{
+    background-color: black;
+    color: red;
+}
